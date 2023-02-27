@@ -1,0 +1,42 @@
+{
+  "parser": "@typescript-eslint/parser", // add the TypeScript parser
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": [
+    "svelte3",
+    "@typescript-eslint" // add the TypeScript plugin
+  ],
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended" // add the TypeScript recommended rules
+  ],
+  "overrides": [ // this stays the same
+    {
+      "files": ["*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],
+  "rules": {
+    "space-before-function-paren": "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "no-multiple-empty-lines": "off",
+    "import/first": "off"
+  },
+  "settings": {
+    "svelte/typescript": true // load TypeScript as peer dependency
+    // ...
+  }
+}
